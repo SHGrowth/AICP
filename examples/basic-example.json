@@ -1,0 +1,23 @@
+{
+    "aicp_version": "0.1",
+    "project": "example-lib",
+    "default_policy": "stable-n-1",
+    "public_snapshot": {
+        "version": "1.8.0",
+        "tag": "v1.8.0",
+        "docs": "https://example.org/docs/1.8",
+        "code": "https://github.com/example/lib/tree/v1.8.0"
+    },
+    "latest_snapshot": {
+        "version": "1.9.0",
+        "access": "entitled",
+        "entitlement": {
+            "type": "github-sponsors",
+            "url": "https://github.com/sponsors/example"
+        }
+    },
+    "notice": {
+        "short": "A newer stable version (v1.9.0) is available for sponsors.",
+        "long": "This AI response uses the previous stable release. Provide a valid entitlement to unlock the latest stable documentation and code."
+    }
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AICP Manifest Schema",
+  "type": "object",
+  "required": ["aicp_version", "project", "default_policy", "public_snapshot"],
+  "properties": {
+    "aicp_version": {
+      "type": "string",
+      "const": "0.1",
+      "description": "The version of the AICP protocol."
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project or library."
+    },
+    "default_policy": {
+      "type": "string",
+      "enum": ["stable-n-1", "latest-public"],
+      "description": "The default consumption policy for unauthenticated agents."
+    },
+    "public_snapshot": {
+      "type": "object",
+      "required": ["version", "docs", "code"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "The version identifier (e.g. semver) of this snapshot."
+        },
+        "docs": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the documentation for this version."
+        },
+        "code": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the code (repo tree/tag) for this version."
+        },
+        "hash": {
+          "type": "string",
+          "description": "Optional integrity hash of the snapshot."
+        }
+      }
+    },
+    "latest_snapshot": {
+      "type": "object",
+      "required": ["version", "access"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "The version identifier of the latest stable snapshot."
+        },
+        "access": {
+          "type": "string",
+          "enum": ["public", "entitled"],
+          "description": "Access level for this snapshot."
+        },
+        "entitlement": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["github-sponsors", "custom-token"],
+              "description": "Mechanism required to prove entitlement."
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL where the user can acquire entitlement."
+            }
+          }
+        }
+      }
+    },
+    "notice": {
+      "type": "object",
+      "properties": {
+        "short": {
+          "type": "string",
+          "description": "Short notice text for the AI to display."
+        },
+        "long": {
+          "type": "string",
+          "description": "Detailed policy explanation."
+        }
+      }
+    }
+  }
+}
