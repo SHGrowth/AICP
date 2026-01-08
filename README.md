@@ -4,7 +4,7 @@
 
 ## The Problem: The "Tailwind Paradox"
 
-In late 2024, a Pull Request to add an `llms.txt` file (AI-optimized documentation) to Tailwind CSS was [closed by the creator](https://github.com/tailwindlabs/tailwindcss.com/pull/2388).
+In late 2025, a Pull Request to add an `llms.txt` file (AI-optimized documentation) to Tailwind CSS was [closed by the creator](https://github.com/tailwindlabs/tailwindcss.com/pull/2388).
 
 His reasoning was brutally honest: **"I just don't have time to work on things that don't help us pay the bills."**
 
